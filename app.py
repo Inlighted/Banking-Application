@@ -111,7 +111,7 @@ elif menu == "User Login":
             st.subheader("Balance")
 
             st.write(
-                f"$ {get_balance(userid)}"
+                f"₹ {get_balance(userid)}"
             )
 
         elif action == "Deposit":
@@ -160,7 +160,7 @@ elif menu == "User Login":
 
             loan_type = st.selectbox(
                 "Loan Type",
-                ["Home", "Car", "Education", "Personal", "Business"]
+                ["Home", "Car", "Education"]
             )
 
             amount = st.number_input(
@@ -191,8 +191,9 @@ elif menu == "User Login":
                 st.success(
                     "Loan Applied Successfully"
                 )
-            elif action == "Pay Loan":
-                from services.loan_service import (
+
+        elif action == "Pay Loan":
+            from services.loan_service import (
                 pay_loan,
                 get_pending_loan
             )
